@@ -12,4 +12,10 @@ project(${ADDON_APP}
         HOMEPAGE_URL "https://github.com/edelwud/hpftp"
         LANGUAGES CXX)
 
+conan_cmake_run(REQUIRES
+        gtest/cci.20210126
+        BASIC_SETUP CMAKE_TARGETS
+        BUILD missing)
+
 initialize_project()
+
