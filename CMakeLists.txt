@@ -1,17 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
 
-enable_language(CXX)
-include(GNUInstallDirs)
+set(CMAKE_INSTALL_PREFIX "/install")
+
 include(cmake/main.cmake)
 
-HunterGate(
-        URL "https://github.com/cpp-pm/hunter/archive/v0.23.224.tar.gz"
-        SHA1 "18e57a43efc435f2e1dae1291e82e42afbf940be"
-)
+set(CMAKE_CXX_STANDARD 17)
 
-get_project_name("${CMAKE_CURRENT_SOURCE_DIR}" "PROJECT_NAME")
-project(${PROJECT_NAME}
-        VERSION 0.1.1
-        DESCRIPTION "Simple project")
+project(${ADDON_APP}
+        VERSION 0.0.1
+        DESCRIPTION "High performance FTP server"
+        HOMEPAGE_URL "https://github.com/edelwud/hpftp"
+        LANGUAGES CXX)
 
-initialize_project(${CMAKE_CURRENT_SOURCE_DIR})
+initialize_project()
